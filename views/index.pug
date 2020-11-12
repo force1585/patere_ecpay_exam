@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  p Unit price : 100
+    body
+      form(action='/pay', method='POST')
+        p
+          |number:
+          input#num(type='number', name='number', required='', min=1, step=1,value='',onkeyup='total.value=num.value*100')
+          p
+          script(type='text/javascript').
+                if (foo) bar(1 + 5)
+          |total cost:
+          input#total(type='number',readonly='',required='', value= '')
+        input(type='submit', value='Submit')
